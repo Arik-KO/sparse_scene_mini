@@ -1,0 +1,5 @@
+data/
+work_dirs/
+__pycache__/
+*.pth
+.pytest_cache/
