@@ -21,7 +21,7 @@ def setup_logger(log_dir, name="sparse_scene", level=logging.INFO) -> logging.Lo
     console.setLevel(level)
     logger.addHandler(console)
 
-    file_handler = logging.FileHandler(log_dir/ f"{name}.log")  #for the files that will be saved, we will arrange the name and format
+    file_handler = logging.FileHandler(log_dir/ f"{name}.log", encoding ="utf-8")  #for the files that will be saved, we will arrange the name and format
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(fmt)
     logger.addHandler(file_handler)
