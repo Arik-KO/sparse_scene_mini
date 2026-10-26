@@ -7,7 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 def make_out_dir(script_name, data_version):
     out_dir = PROJECT_ROOT/"work_dirs"/"explore"/script_name/data_version
-    out_dir.mkdir(parents=True, exists_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
     return out_dir
 
 
@@ -17,11 +17,11 @@ def save_figure(fig, out_dir, name):
 
 
 def save_csv(rows, out_dir, name):
-    path = out_dir/ f"{name}".csv
+    path = out_dir/ f"{name}.csv"
     with path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames= list(rows[0].keys()))
         writer.writeheader()
-        writer.writerows(eows)
+        writer.writerows(rows)
     return path
 
 
